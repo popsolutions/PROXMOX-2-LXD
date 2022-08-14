@@ -173,3 +173,7 @@ https://ip.address
 # PRO TIP
 
 If you are using PROXMOX and need to develop applications that are courrently on production in your local computer just use as IMAGE one of the BACKUPS. Both tar.gz and tar.zstd are accepted by LXD Server.
+
+
+Usefull links: 
+https://forum.proxmox.com/threads/lxd-to-proxmox.68501/
