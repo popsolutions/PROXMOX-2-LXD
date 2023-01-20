@@ -177,3 +177,5 @@ If you are using PROXMOX and need to develop applications that are courrently on
 
 Usefull links: 
 https://forum.proxmox.com/threads/lxd-to-proxmox.68501/
+
+Increase Storage Volume Size lxc storage set <storage_name> volume.size <new_volumeGB>
