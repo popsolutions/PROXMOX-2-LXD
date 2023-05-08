@@ -174,6 +174,26 @@ https://ip.address
 
 If you are using PROXMOX and need to develop applications that are courrently on production in your local computer just use as IMAGE one of the BACKUPS. Both tar.gz and tar.zstd are accepted by LXD Server.
 
+# IMPORTING TO PROXMOX
+Generate an LXC EXPORT from the LXD Cli
+
+`lxc export mycontainer /path/to/mycontainer.tar.gz`
+
+Copy the image to an storage available to the Proxmox Node
+
+In the Node where you want to deploy the container:
+`pct create <id> /path/to/the/export/image_tar --cores 2 --memory 2048 --rootfs <Storage>:<size>`
+
+Example: pct create 186 /var/lib/vz/dump/mycontainer.tar.gz --cores 2 --memory 2048 --rootfs ceph-ssd:12
+
+This is a deployment of an image called mycontainer.tar.gz
+
+It was saved at the local disk of the node (scp upload or rsync)
+
+With 2 CPU Cores & 2G of RAM
+
+In a Ceph Distributed Storage called: ceph-ssd (you can put what ever you use, local-zfs, NFS or Whatever):12
+The last 12 sets a 12G Disk Size for the LXC Container
 
 Usefull links: 
 https://forum.proxmox.com/threads/lxd-to-proxmox.68501/
